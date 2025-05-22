@@ -1,18 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap');
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto';
 }
 .ticker-container{
-    position: fixed;
+    position: sticky;
+    top: 0%;
     left: 0%;
     z-index: 1000;
     width: 100%;
-    background: #ffff;
-    color: #333333;
+    background: #EBD4CB;
+    color: #2C0703;
     overflow: hidden;
     white-space: nowrap;
-    padding: 10px 0;
+    padding: 0px 0;
+    font-family: 'Sora';
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .ticker{
@@ -25,8 +32,94 @@ body{
 @keyframes scroll {
     0%{
         transform: translateX(0%);
+        animation-timing-function: linear;
     }
     100%{
         transform: translateX(-100%);
     }
 }
+
+.navbar{
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+}
+.navbar h3{
+    color: #483C46;
+
+}
+.navbar a{
+    text-decoration: none;
+    color: #1D84B5;
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.search-box input{
+    border-radius: 2rem;
+}
+
+  .btn-box a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 4px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+  }
+  
+  .btn-box a:hover{
+    color: #1D84B5;
+  }
+  
+  .btn-box a:nth-child(2){
+    background: transparent;
+    color: #53A2BE;
+  }
+  
+  .btn-box a:nth-child(2):hover{
+    color: #222222;
+  }
+  
+  .btn-box a:nth-child(2)::before{
+    background: #00abf0;
+  }
+  
+  .btn-box a::before{
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 0;
+       height: 100%;
+       background: #84DCC6;
+       z-index: -1;
+       transition: .5s;
+  }
+  
+  .btn-box a:hover:before{
+    width: 100%;
+  }
+  
+  
+  @keyframes showRight{
+    100%{
+      width: 0;
+    }
+  }
